@@ -29,6 +29,7 @@ class Directory extends Component {
     //     })
     // }
 
+    //when you render, you will put employee table and search results in here to render.
 }
 
 export default Directory
