@@ -1,0 +1,12 @@
+.header {
+    color: white;
+    background-color: rgb(17, 27, 46);
+    border-bottom: 10px solid rgb(63, 201, 240);
+    padding: 50px;
+
+}
+
+.content {
+    text-align: center;
+    display: block;
+}
