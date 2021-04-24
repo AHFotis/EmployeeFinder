@@ -27,7 +27,9 @@ function SearchResults(props) {
                   {result.cell}
               </td>
               <td data-th="email">
-                 <a href="mailto:"{ ...result.email } target="_blank">{result.email}</a>
+                 <a href={ `mailto:${result.email}` } target="_blank">
+                     {result.email}
+                 </a>
               </td>
               <td data-th="DOB">
                   {formatDate(result.dob.date)}

@@ -37,6 +37,11 @@ class Directory extends Component {
 
     render() {
         return (
+            <div>
+            <Search 
+            value={this.state.search}
+            handleInputChange={this.handleInputChange}
+            />
             <table id="table" className="table table-striped table-hover table-condensed">
             <thead>
                 <tr>
@@ -60,6 +65,7 @@ class Directory extends Component {
           <SearchResults results={this.state.result}/>
         
         </table>
+        </div>
         );
     }
 }
