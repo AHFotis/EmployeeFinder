@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Search from "./Search";
 import API from "../utils/API";
+import EmployeeTable from "../EmployeeTable";
 
 
 class Directory extends Component {
@@ -30,6 +31,12 @@ class Directory extends Component {
     // }
 
     //when you render, you will put employee table and search results in here to render.
+
+    render() {
+        return (
+            <EmployeeTable />
+        );
+    }
 }
 
 export default Directory
