@@ -1,14 +1,14 @@
 import React from "react";
 import Nav from "./components/Nav";
 import Search from "./components/Search";
-import EmployeeTable from "./components/EmployeeTable";
+import Directory from "./components/Directory";
 
 function App() {
   return (
       <div>
       <Nav />
       <Search />
-      <EmployeeTable />
+      <Directory />
       </div>
   );
 } 
