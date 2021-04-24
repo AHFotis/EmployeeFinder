@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Search from "../Search";
 import API from "../../utils/API";
 import SearchResults from "../SearchResults";
+import "./style.css";
 
 
 class Directory extends Component {

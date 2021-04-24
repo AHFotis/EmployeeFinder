@@ -1,0 +1,5 @@
+
+.pointer:hover:after {
+    content: "🔻";
+    margin-right: 0;
+  }
