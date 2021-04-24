@@ -12,7 +12,7 @@ function SearchResults(props) {
         const formattedDate = [month, day, year].join("-");
         return formattedDate;
       }
-    
+    //for filter, use ternary expression to check if search is empty or not. if empty, do below, if not, use filter
   return (
       <tbody>
       {props.results.map(result => (
