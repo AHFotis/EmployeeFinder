@@ -34,6 +34,30 @@ class Directory extends Component {
         })
     }
 
+    handleSubmit = event => {
+        event.preventDefault()
+        
+        const sortedEmployee = this.state.result.sort((a, b) => {
+            let nameA = a.name.first;
+            let nameB = b.name.first;
+
+            if (nameA > nameB) {
+                return 1
+            }
+            
+            if (nameA < nameB) {
+                return -1
+            }
+            
+            return 0;
+          });
+        console.log(sortedEmployee)
+
+        this.setState({
+            result: sortedEmployee
+        })
+    }
+
     //when you render, you will put employee table and search results in here to render.
 
     render() {
@@ -49,7 +73,8 @@ class Directory extends Component {
                     <th>
                         Image
                     </th>
-                    <th className="pointer">
+                    <th className="pointer"
+                        onClick={this.handleSubmit}>
                         Name
                     </th>
                     <th>
