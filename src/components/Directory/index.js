@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Search from "../Search";
 import API from "../../utils/API";
 import SearchResults from "../SearchResults";
+import FullEmployee from "../FullEmployee";
 import "./style.css";
 
 
@@ -62,8 +63,12 @@ class Directory extends Component {
                     </th>
                 </tr>
             </thead>
-          <SearchResults results={this.state.result}/>
-        
+
+           {!this.state.search ? (
+            <FullEmployee results={this.state.result}/>
+           ) : (
+            <SearchResults results={this.state.result} value={this.state.search} />
+           )}
         </table>
         </div>
         );

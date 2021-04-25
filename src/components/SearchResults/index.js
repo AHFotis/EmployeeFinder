@@ -11,33 +11,39 @@ function SearchResults(props) {
         const day = dayArray[0];
         const formattedDate = [month, day, year].join("-");
         return formattedDate;
-      }
-    //for filter, use ternary expression to check if search is empty or not. if empty, do below, if not, use filter
-  return (
-      <tbody>
-      {props.results.map(result => (
-          <tr key={result.login.uuid}>
-              <td data-th="image">
-                  <img src={result.picture.thumbnail}></img>
-              </td>
-              <td data-th="name">
-                  {result.name.first} {result.name.last}
-              </td>
-              <td data-th="phone">
-                  {result.cell}
-              </td>
-              <td data-th="email">
-                 <a href={ `mailto:${result.email}` } target="_blank">
-                     {result.email}
-                 </a>
-              </td>
-              <td data-th="DOB">
-                  {formatDate(result.dob.date)}
-              </td>
-          </tr>
-      ))}
-      </tbody>
-  );
+    }
+   
+    return (
+        <tbody>
+            {props.results.filter(search => {
+                let name = search.name.first + search.name.last;
+                console.log(name)
+                let result = name.includes(props.value)
+                console.log(result)
+                return result
+            }).map(result => (
+                <tr key={result.login.uuid}>
+                    <td data-th="image">
+                        <img src={result.picture.thumbnail}></img>
+                    </td>
+                    <td data-th="name">
+                        {result.name.first} {result.name.last}
+                    </td>
+                    <td data-th="phone">
+                        {result.cell}
+                    </td>
+                    <td data-th="email">
+                        <a href={`mailto:${result.email}`} target="_blank">
+                            {result.email}
+                        </a>
+                    </td>
+                    <td data-th="DOB">
+                        {formatDate(result.dob.date)}
+                    </td>
+                </tr>
+            ))}
+        </tbody>
+    );
 }
 
 export default SearchResults;
