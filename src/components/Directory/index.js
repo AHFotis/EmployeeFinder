@@ -54,7 +54,7 @@ class Directory extends Component {
 
                 return 0;
             });
-        
+
             console.log(sortedEmployee)
 
             this.setState({
@@ -72,13 +72,13 @@ class Directory extends Component {
                 let nameA = a.name.first;
                 let nameB = b.name.first;
 
-              if (nameA > nameB) {
+                if (nameA > nameB) {
                     return -1
-                }   
+                }
                 return 0;
             });
-            
-             this.setState({
+
+            this.setState({
                 result: sortedEmployee
             })
         }
