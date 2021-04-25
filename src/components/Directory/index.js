@@ -10,17 +10,18 @@ class Directory extends Component {
 
     state = {
         result: [],
-        search: ""
+        search: "",
+        order: ""
     };
 
     componentDidMount() {
         this.searchEmployees()
-       
+
     }
 
     searchEmployees = () => {
         API.search()
-        .then(res => this.setState({ result: res.data.results}))
+            .then(res => this.setState({ result: res.data.results }))
             // .then(res => console.log(res))
             .catch(err => console.log(err));
     };
@@ -36,66 +37,91 @@ class Directory extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
+
+        if (`${this.state.order}` == "" || `${this.state.order}` == "descending") {
+
+            this.setState({
+                order: "ascending"
+            })
+
+            const sortedEmployee = this.state.result.sort((a, b) => {
+                let nameA = a.name.first;
+                let nameB = b.name.first;
+
+                if (nameA < nameB) {
+                    return -1
+                }
+
+                return 0;
+            });
         
-        const sortedEmployee = this.state.result.sort((a, b) => {
-            let nameA = a.name.first;
-            let nameB = b.name.first;
+            console.log(sortedEmployee)
 
-            if (nameA > nameB) {
-                return 1
-            }
-            
-            if (nameA < nameB) {
-                return -1
-            }
-            
-            return 0;
-          });
-        console.log(sortedEmployee)
+            this.setState({
+                result: sortedEmployee
+            })
+        }
 
-        this.setState({
-            result: sortedEmployee
-        })
+        else if (`${this.state.order}` == "ascending") {
+
+            this.setState({
+                order: "descending"
+            })
+
+            const sortedEmployee = this.state.result.sort((a, b) => {
+                let nameA = a.name.first;
+                let nameB = b.name.first;
+
+              if (nameA > nameB) {
+                    return -1
+                }   
+                return 0;
+            });
+            
+             this.setState({
+                result: sortedEmployee
+            })
+        }
     }
 
-    //when you render, you will put employee table and search results in here to render.
 
     render() {
         return (
             <div>
-            <Search 
-            value={this.state.search}
-            handleInputChange={this.handleInputChange}
-            />
-            <table id="table" className="table table-striped table-hover table-condensed">
-            <thead>
-                <tr>
-                    <th>
-                        Image
+                <Search
+                    value={this.state.search}
+                    handleInputChange={this.handleInputChange}
+                />
+                <table id="table" className="table table-striped table-hover table-condensed">
+                    <thead>
+                        <tr>
+                            <th>
+                                Image
                     </th>
-                    <th className="pointer"
-                        onClick={this.handleSubmit}>
-                        Name
+                            <th className="pointer"
+                                data-order={this.state.order}
+                                onClick={this.handleSubmit}>
+                                Name
                     </th>
-                    <th>
-                        Phone
+                            <th>
+                                Phone
                     </th>
-                    <th>
-                        Email 
+                            <th>
+                                Email
                     </th>
-                    <th>
-                        DOB
+                            <th>
+                                DOB
                     </th>
-                </tr>
-            </thead>
+                        </tr>
+                    </thead>
 
-           {!this.state.search ? (
-            <FullEmployee results={this.state.result}/>
-           ) : (
-            <SearchResults results={this.state.result} value={this.state.search} />
-           )}
-        </table>
-        </div>
+                    {!this.state.search ? (
+                        <FullEmployee results={this.state.result} />
+                    ) : (
+                        <SearchResults results={this.state.result} value={this.state.search} />
+                    )}
+                </table>
+            </div>
         );
     }
 }
