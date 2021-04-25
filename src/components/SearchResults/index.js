@@ -8,11 +8,11 @@ function SearchResults(props) {
     return (
         <tbody>
             {props.results.filter(search => {
-                let name = search.name.first + search.name.last;
+                let name = search.name.first.toLowerCase() + search.name.last.toLowerCase();
                 console.log(name)
                 let result = name.includes(props.value)
                 console.log(result)
-                return result
+               return result
             }).map(result => (
                 <tr key={result.login.uuid}>
                     <td data-th="image">

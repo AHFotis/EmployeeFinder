@@ -100,7 +100,8 @@ class Directory extends Component {
                     </th>
                             <th className="pointer"
                                 data-order={this.state.order}
-                                onClick={this.handleSubmit}>
+                                onClick={this.handleSubmit}
+                                >
                                 Name
                     </th>
                             <th>
