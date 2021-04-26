@@ -9,9 +9,8 @@ function SearchResults(props) {
         <tbody>
             {props.results.filter(search => {
                 let name = search.name.first.toLowerCase() + search.name.last.toLowerCase();
-                console.log(name)
-                let result = name.includes(props.value)
-                console.log(result)
+                let searchName = props.value.toLowerCase()
+                let result = name.includes(searchName)
                return result
             }).map(result => (
                 <tr key={result.login.uuid}>
