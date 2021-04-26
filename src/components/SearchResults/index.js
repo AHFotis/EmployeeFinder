@@ -15,7 +15,7 @@ function SearchResults(props) {
             }).map(result => (
                 <tr key={result.login.uuid}>
                     <td data-th="image">
-                        <img src={result.picture.thumbnail}></img>
+                        <img src={result.picture.medium}></img>
                     </td>
                     <td data-th="name">
                         {result.name.first} {result.name.last}

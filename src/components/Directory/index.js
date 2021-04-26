@@ -38,7 +38,7 @@ class Directory extends Component {
     handleSubmit = event => {
         event.preventDefault()
 
-        if (`${this.state.order}` == "" || `${this.state.order}` == "descending") {
+        if (`${this.state.order}` === "" || `${this.state.order}` === "descending") {
 
             this.setState({
                 order: "ascending"
@@ -62,7 +62,7 @@ class Directory extends Component {
             })
         }
 
-        else if (`${this.state.order}` == "ascending") {
+        else if (`${this.state.order}` === "ascending") {
 
             this.setState({
                 order: "descending"
