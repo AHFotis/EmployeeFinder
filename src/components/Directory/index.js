@@ -22,7 +22,6 @@ class Directory extends Component {
     searchEmployees = () => {
         API.search()
             .then(res => this.setState({ result: res.data.results }))
-            // .then(res => console.log(res))
             .catch(err => console.log(err));
     };
 
@@ -54,8 +53,6 @@ class Directory extends Component {
 
                 return 0;
             });
-
-            console.log(sortedEmployee)
 
             this.setState({
                 result: sortedEmployee

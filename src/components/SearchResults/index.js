@@ -15,7 +15,7 @@ function SearchResults(props) {
             }).map(result => (
                 <tr key={result.login.uuid}>
                     <td data-th="image">
-                        <img src={result.picture.medium}></img>
+                        <img src={result.picture.medium} alt="Employee"></img>
                     </td>
                     <td data-th="name">
                         {result.name.first} {result.name.last}
@@ -24,7 +24,7 @@ function SearchResults(props) {
                         {result.cell}
                     </td>
                     <td data-th="email">
-                        <a href={`mailto:${result.email}`} target="_blank">
+                        <a href={`mailto:${result.email}`} target="_blank" rel="noreferrer">
                             {result.email}
                         </a>
                     </td>

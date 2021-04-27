@@ -5,27 +5,22 @@ import "./style.css";
 function Search(props) {
     return (
 
-    <div className="searchForm">
+        <div className="searchForm">
 
-        <form className="form">
+            <form className="form">
 
-            <input
-                onChange={props.handleInputChange}
-                value={props.value}
-                name="search"
-                type="text"
-                className="form-control"
-                placeholder="Search For an Employee"
-                id="search"
-            />
-        </form>
+                <input
+                    onChange={props.handleInputChange}
+                    value={props.value}
+                    name="search"
+                    type="text"
+                    className="form-control"
+                    placeholder="Search"
+                    id="search"
+                />
+            </form>
 
-
-</div>
-
-
-
-
+        </div>
 
     )
 }
