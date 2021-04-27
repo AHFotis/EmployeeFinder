@@ -3,3 +3,22 @@
     content: "🔻";
     margin-right: 0;
   }
+
+ #tableHead {
+    color: white;
+    background-color: rgb(17, 27, 46);
+    border-bottom: 10px solid rgb(63, 201, 240);
+    padding: 50px;
+
+}
+
+#table {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: white;
+}
+
+#tableSection {
+  background-color: rgb(205, 234, 245);
+}

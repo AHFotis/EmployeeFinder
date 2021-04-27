@@ -87,13 +87,13 @@ class Directory extends Component {
 
     render() {
         return (
-            <div>
+            <div id="tableSection">
                 <Search
                     value={this.state.search}
                     handleInputChange={this.handleInputChange}
                 />
                 <table id="table" className="table table-striped table-hover table-condensed">
-                    <thead>
+                    <thead id="tableHead">
                         <tr>
                             <th>
                                 Image
