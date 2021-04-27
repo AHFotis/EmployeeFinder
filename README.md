@@ -21,7 +21,7 @@ A Reach employee directory that allows the user to search an employee database. 
   
 ## Reference
 
-Click [here]() to view the live application on GitHub Pages.
+Click [here](https://ahfotis.github.io/EmployeeFinder/) to view the live application on GitHub Pages.
 
 Screenshot of application
   ![Home Page](Reference/example.png)
