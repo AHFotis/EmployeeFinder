@@ -1,5 +1,5 @@
 import React from "react";
-import formatDate from "../FormatDate"
+import formatDate from "../../utils/formatDate"
 
 
 function SearchResults(props) {

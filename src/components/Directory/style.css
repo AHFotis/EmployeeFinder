@@ -16,9 +16,11 @@
   width: 85%;
   margin: 0 auto;
   margin-top: 20px;
+  margin-bottom: 20px;
   background-color: white;
 }
 
 #tableSection {
   background-color: rgb(205, 234, 245);
+  min-height: 100vh;
 }
